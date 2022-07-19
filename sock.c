@@ -102,9 +102,14 @@ int main()
     printf("Closing connection...\n");
     CLOSESOCKET(socket_client);
 
+    printf("Closing listening socket...\n");
+    CLOSESOCKET(socket_listen);
+
 #if defined(_WIN32)
     WSACleanup();
 #endif
 
-    return 0;
+    printf("Finished.\n")
+
+        return 0;
 }
