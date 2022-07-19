@@ -70,6 +70,11 @@ int main()
         return 1;
     }
 
+    // printing the address to the console
+    printf("Client is connected...");
+    char address_buffer[100];
+    getnameinfo((struct sockaddr *)&client_address, client_len, address_buffer, sizeof(address_buffer), 0, 0, NI_NUMERICHOST);
+    printf("%s\n", address_buffer);
 #if defined(_WIN32)
     WSACleanup();
 #endif
