@@ -109,7 +109,7 @@ int main()
     WSACleanup();
 #endif
 
-    printf("Finished.\n")
+    printf("Finished.\n");
 
         return 0;
 }
