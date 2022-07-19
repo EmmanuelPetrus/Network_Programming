@@ -23,7 +23,7 @@ int main()
     printf("Configuring local address.....\n");
     struct addrinfo hints;            // a struct that contains info about our local addresss
     memset(&hints, 0, sizeof(hints)); // it sets all variables inside the struct to zero
-    hints.ai_family = AF_INET;        // it specifies the type of address we're trying to return from the server AF_INET stands for IPv4
+    hints.ai_family = AF_INET6;        // it specifies the type of address we're trying to return from the server AF_INET stands for IPv4
     hints.ai_socktype = SOCK_STREAM;  // it specifies that we're establishing a TCP connection protocol
     hints.ai_flags = AI_PASSIVE;      // it tells our program that we're ready to bind
 
