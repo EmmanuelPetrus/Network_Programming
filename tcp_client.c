@@ -10,7 +10,7 @@ int main()
     WSADATA d;
     if (WSAStartup(MAKEWORD(2, 2), &d))
     {
-                                    ````````````````````````````````````````z            fprintf(stderr, "Failed to initialize.\n");
+        fprintf(stderr, "Failed to initialize.\n");
         return 1;
     }
 #endif
