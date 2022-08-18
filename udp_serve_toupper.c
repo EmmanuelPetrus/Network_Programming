@@ -38,16 +38,16 @@ int main(int argc, char const *argv[])
     }
     freeaddrinfo(bind_address);
 
-    fd_set master;
-    FD_ZERO(&master);
-    FD_SET(socket_listen, &master);
-    SOCKET max_socket = socket_listen;
+    fd_set master;    //setting variable to hold address for the different sockets that may want to connect 
+    FD_ZERO(&master);      //setting all values inside the variable to zero 
+    FD_SET(socket_listen, &master);   //storing listening socket inside the master array
+    SOCKET max_socket = socket_listen;      //specifying the max length of socket 
 
     printf("Waiting for connections.....\n");
 
     while (1)
     {
-        fd_set reads;
+        fd_set reads;    //specifying another array to store the sockets in master so that when select() acts on it, the other listening sockets won't be thwarted
         reads = master;
         if (select(max_socket + 1, &reads, 0, 0, 0) < 0)
         {
